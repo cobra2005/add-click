@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets//css/style.css">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
 </head>
 <body>
     <div id="main">
         <div class="times">
-            <p class="result text-center">0</p>
+            <input type="text" name="" class="result" id="" value="0">
         </div>
     
         <div class="btn minus">
@@ -20,31 +20,35 @@
         <div class="btn plus">
             <i class="ti-plus"></i>
         </div>
-
     </div>
 
     <script>
-        var result = document.querySelector('.times');
+        var resultBox = document.querySelector('.times');
+        var result = document.querySelector('.times .result');
         var minusBtn = document.querySelector('.minus');
         var plusBtn = document.querySelector('.plus');
         var res = 0;
+        var array = [result];
         minusBtn.onclick = function() {
             if(res == 0) {
                 res = 0;
                 return;
             }
             res--;
-            result.innerHTML = `<p class="result text-center">${res}</p>`;
+            result.value = res;
+            console.log(result);
             
         }
         plusBtn.onclick = function() {
-            if(res == 10) {
+            res++;
+            if(res == 100) {
                 alert('Bạn đã bấm được 100 lần');
                 res = 0;
-            } else {
-                res++;
-                result.innerHTML = `<p class="result text-center">${res}</p>`;
             }
+            result.value = res;
+        }
+        result.onblur = function() {
+            res = Number(result.value);
         }
     </script>
 </body>
