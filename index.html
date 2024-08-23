@@ -38,11 +38,12 @@
             
         }
         plusBtn.onclick = function() {
-            res++;
-            result.innerHTML = `<p class="result text-center">${res}</p>`;
             if(res == 100) {
                 alert('Bạn đã bấm được 100 lần');
-                res = -1;
+                res = 0;
+            } else {
+                res++;
+                result.innerHTML = `<p class="result text-center">${res}</p>`;
             }
         }
     </script>
