@@ -6,6 +6,7 @@
 
 :root {
     --btn-color: red;
+    --btn-press: rgba(255, 0, 0, 0.217);
 }
 
 .text-center {
@@ -42,7 +43,12 @@
     display: inline-block;
     width: 50px;
     height: 50px;
+    background-color: var(--btn-color);
     cursor: pointer;
+}
+
+.btn:active {
+    background-color: var(--btn-press);
 }
 
 .btn i {
@@ -56,14 +62,12 @@
 
 .minus {
     margin: 0 0 16px 16px;
-    background-color: var(--btn-color);
     border-radius: 50%;
 }
 
 .plus {
     position: absolute;
     margin: 0 16px 16px 0;
-    background-color: var(--btn-color);
     border-radius: 50%;
     right: 0;
 }
